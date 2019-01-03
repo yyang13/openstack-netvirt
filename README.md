@@ -50,6 +50,35 @@ $ openstack network agent list
 | dfb111ea-533e-4837-af86-a5dc8d72f26d | ODL L2         | compute1 | None              | :-)   | UP    | neutron-odlagent-portbinding |
 +--------------------------------------+----------------+----------+-------------------+-------+-------+------------------------------+
 $
+
+$ curl -u admin:admin http://192.168.0.5:8181/restconf/operational/neutron:neutron/hostconfigs/ | python3 -mjson.tool
+{
+    "hostconfigs": {
+        "hostconfig": [
+            {
+                "host-id": "control",
+                "host-type": "ODL L3",
+                "config": "{}"
+            },
+            {
+                "host-id": "control",
+                "host-type": "ODL L2",
+                "config": "{\"supported_vnic_types\": [{\"vnic_type\": \"normal\", \"vif_type\": \"ovs\", \"vif_details\": {} }], \"allowed_network_types\": [\"local\",\"vlan\",\"vxlan\"], \"bridge_mappings\": {\"public\":\"br-ex\"}}"
+            },
+            {
+                "host-id": "compute1",
+                "host-type": "ODL L2",
+                "config": "{\"supported_vnic_types\": [{\"vnic_type\": \"normal\", \"vif_type\": \"ovs\", \"vif_details\": {} }], \"allowed_network_types\": [\"local\",\"vlan\",\"vxlan\"], \"bridge_mappings\": {\"public\":\"br-ex\"}}"
+            },
+            {
+                "host-id": "compute2",
+                "host-type": "ODL L2",
+                "config": "{\"supported_vnic_types\": [{\"vnic_type\": \"normal\", \"vif_type\": \"ovs\", \"vif_details\": {} }], \"allowed_network_types\": [\"local\",\"vlan\",\"vxlan\"], \"bridge_mappings\": {\"public\":\"br-ex\"}}"
+            }
+        ]
+    }
+}
+$
 ```
 
 Integration Topo
