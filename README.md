@@ -36,7 +36,20 @@ $ openstack server list
 | 2f0d0fd0-a2c3-45c6-bc5c-d1bb740bbe20 | vm2  | ACTIVE | net01=10.15.1.5                  | cirros-0.3.5-x86_64-disk | m1.tiny |
 | 3f1e15fe-9aab-4093-a864-93aa9cbc9033 | vm1  | ACTIVE | net01=10.15.1.3, 192.168.100.215 | cirros-0.3.5-x86_64-disk | m1.tiny |
 +--------------------------------------+------+--------+----------------------------------+--------------------------+---------+
-stack@control:~/devstack$
+$
+
+$ openstack network agent list
++--------------------------------------+----------------+----------+-------------------+-------+-------+------------------------------+
+| ID                                   | Agent Type     | Host     | Availability Zone | Alive | State | Binary                       |
++--------------------------------------+----------------+----------+-------------------+-------+-------+------------------------------+
+| 63ced583-79ca-4ff8-bc77-713e61e7b310 | Metadata agent | control  | None              | :-)   | UP    | neutron-metadata-agent       |
+| 9ab1f4de-92aa-450c-b954-1928727bff87 | ODL L2         | compute2 | None              | :-)   | UP    | neutron-odlagent-portbinding |
+| a5537f71-f272-43b8-ac01-8d73a6bb4d02 | DHCP agent     | control  | nova              | :-)   | UP    | neutron-dhcp-agent           |
+| b64059e2-bb81-42f0-8ff9-4ff332b14ee8 | ODL L3         | control  | None              | :-)   | UP    | neutron-odlagent-portbinding |
+| d97c2828-eb8d-45f8-a436-43b95be74c10 | ODL L2         | control  | None              | :-)   | UP    | neutron-odlagent-portbinding |
+| dfb111ea-533e-4837-af86-a5dc8d72f26d | ODL L2         | compute1 | None              | :-)   | UP    | neutron-odlagent-portbinding |
++--------------------------------------+----------------+----------+-------------------+-------+-------+------------------------------+
+$
 ```
 
 Integration Topo
