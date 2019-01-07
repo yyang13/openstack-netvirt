@@ -1,0 +1,11 @@
+OFPST_GROUP_DESC reply (OF1.3) (xid=0x2):
+ group_id=210008,type=all,bucket=actions=group:210007,bucket=actions=set_field:0x64->tun_id,load:0x200->NXM_NX_REG6[],resubmit(,220),bucket=actions=set_field:0x64->tun_id,load:0x600->NXM_NX_REG6[],resubmit(,220)
+ group_id=210007,type=all,bucket=actions=set_field:0xb->tun_id,resubmit(,55)
+ group_id=5000,type=all,bucket=actions=resubmit(,81)
+ group_id=210009,type=all,bucket=actions=set_field:0xc->tun_id,resubmit(,55)
+ group_id=225002,type=all,bucket=actions=drop
+ group_id=210014,type=all,bucket=actions=group:210013,bucket=actions=load:0x1600->NXM_NX_REG6[],resubmit(,220)
+ group_id=210013,type=all
+ group_id=150011,type=all,bucket=actions=set_field:fa:16:3e:db:1c:0b->eth_src,set_field:fa:16:3e:26:0a:9b->eth_dst,load:0xc00->NXM_NX_REG6[],resubmit(,220)
+ group_id=210010,type=all,bucket=actions=group:210009,bucket=actions=set_field:0xc8->tun_id,load:0x200->NXM_NX_REG6[],resubmit(,220),bucket=actions=set_field:0xc8->tun_id,load:0x600->NXM_NX_REG6[],resubmit(,220)
+ group_id=150008,type=all,bucket=actions=set_field:fa:16:3e:05:0d:55->eth_src,set_field:fa:16:3e:24:25:8f->eth_dst,load:0xb00->NXM_NX_REG6[],resubmit(,220)
